@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lionel Weber</title>
+    <meta name="description" content="Private table tennis coaching by former professional player." />
+
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("/header.html");
+            $("#footer").load("/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="header"></div>
+    <main>
+
+        <section id="impressum">
+            <div class="container">
+                <h1>Impressum</h1>
+                <h3>
+                    Adresse:
+                </h3>
+                <p>Lionel Weber <br>
+                    Reinacherstrasse 126<br>
+                    4053 Basel</p>
+                <p>Mail: <a href="mailto:lionelwebertt@yahoo.de">lionelwebertt@yahoo.de</a></p>
+                <h3>Fotos Credits</h3>
+                <p>Über mich & Trainingsphilosophie: <strong>René Zwald</strong></p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container grid grid-2">
+                <div>
+                    <h2>Kontakt</h2>
+                    <p>
+                        Interessiert an einem Training? Kontaktiere mich, um einen Termin abzumachen.
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        📧 <a href="mailto:lionelwebertt@yahoo.de">lionelwebertt@yahoo.de</a><br />
+                    </p>
+                    <p>
+                        📍 Basel - Schweiz 🇨🇭
+                    </p>
+                    <p>
+                        📞 +41 78 635 30 18
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="/ball.js"></script>
+
+</body>
+
+</html>
