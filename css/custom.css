@@ -20,17 +20,35 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    user-select: none;
 }
 
-body,
-a,
-button,
-input,
-textarea,
-select,
-label {
+body::selection {
+    background-color: var(--accent);
+    color: white;
+}
+
+.js *{
     cursor: none;
+}
+
+.no-js * {
+    cursor: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    a,
+    button,
+    input,
+    textarea,
+    select,
+    label,
+    body {
+        cursor: auto;
+    }
+
+    .ball {
+        display: none;
+    }
 }
 
 a {

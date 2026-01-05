@@ -1,3 +1,6 @@
+document.documentElement.classList.remove("no-js");
+document.documentElement.classList.add("js");
+
 document.addEventListener("click", (e) => {
     const ball = document.createElement("div");
     ball.classList.add("ball");
@@ -55,24 +58,26 @@ const interactiveSelectors = "a, button, input, textarea, select, label";
 if (!isTouchDevice) {
     document.addEventListener("mouseover", (e) => {
         if (e.target.closest(interactiveSelectors)) {
-            isHoveringInteractive = true;
             cursorBall.classList.add("cursor-racket");
         }
     });
 
     document.addEventListener("mouseout", (e) => {
         if (e.target.closest(interactiveSelectors)) {
-            isHoveringInteractive = false;
             cursorBall.classList.remove("cursor-racket");
         }
     });
 }
 
 document.addEventListener("mousedown", () => {
-    cursorBall.style.transform = `translate(-50%, -50%) scale(${isHoveringInteractive ? 1.2 : 1.5})`;
+    cursorBall.style.transform = `translate(-50%, -50%) scale(1.2)`;
+    cursorBall.style.opacity = `80%`;
+
 });
 document.addEventListener("mouseup", () => {
     cursorBall.style.transform = `translate(-50%, -50%) scale(1)`;
+    cursorBall.style.opacity = `100%`;
+
 });
 
 
