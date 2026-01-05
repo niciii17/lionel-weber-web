@@ -1,5 +1,4 @@
-document.documentElement.classList.remove("no-js");
-document.documentElement.classList.add("js");
+document.documentElement.classList.replace("no-js", "js");
 
 document.addEventListener("click", (e) => {
     const ball = document.createElement("div");

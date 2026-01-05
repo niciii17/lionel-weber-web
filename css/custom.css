@@ -27,8 +27,10 @@ body::selection {
     color: white;
 }
 
-.js *{
+@media (hover: hover) and (pointer: fine) {
+  .js * {
     cursor: none;
+  }
 }
 
 .no-js * {
