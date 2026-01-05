@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgages/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <title>404 - Seite nicht gefunden</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111827;
+            --muted: #6b7280;
+            --accent: #dc2626;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 6rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+
+        a.home-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a.home-btn:hover {
+            background-color: #b91c1c;
+            transform: scale(1.05);
+        }
+
+
+        .ball {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ffffff, #f0f0f0 30%, #cccccc 60%, #aaaaaa 100%);
+            border: .1px solid #222222;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+            z-index: 9999;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>404</h1>
+        <h2>Oops! Seite nicht gefunden</h2>
+        <p>Die Seite, die du suchst, existiert leider nicht. Lass uns zurück zur Startseite gehen.</p>
+        <a href="/" class="home-btn">Zur Startseite</a>
+    </div>
+
+    <script>
+        // Ball physics
+        const balls = [];
+        const ballCount = 10;
+        const gravity = 0.9;
+        const damping = 0.8;
+        const floorY = window.innerHeight - 100; // fixed floor for all balls
+        for (let i = 0; i < ballCount; i++) {
+            const ball = document.createElement('div');
+            ball.className = 'ball';
+            const size = Math.random() * 40 + 20; // 20-60px
+            ball.style.width = size + 'px';
+            ball.style.height = size + 'px';
+
+            // Horizontal position
+            const startX = Math.random() * (window.innerWidth * 0.5 - size);
+
+            // Vertical position (top half, fully visible)
+            const minStartY = 50; // minimum starting height
+            const maxStartY = floorY / 2; // max starting height (top half of screen)
+
+            const startY = Math.random() * (maxStartY - minStartY) + minStartY;
+            ball.style.left = startX + 'px';
+            ball.style.top = startY + 'px';
+
+            document.body.appendChild(ball);
+
+            balls.push({
+                el: ball,
+                x: startX,
+                y: startY,
+                vx: (Math.random() - 0.5) * 17,
+                vy: 0,
+                size: size,
+                settled: false
+            });
+        }
+
+        function animate() {
+            for (const ball of balls) {
+                if (!ball.settled) {
+                    ball.vy += gravity;
+                    ball.y += ball.vy;
+                    ball.x += ball.vx;
+
+                    if (ball.y + ball.size > floorY) {
+                        ball.y = floorY - ball.size;
+                        ball.vy *= -damping;
+                        ball.vx *= 0.95;
+
+                        if (Math.abs(ball.vy) < 1) {
+                            ball.vy = 0;
+                            ball.vx = 0;
+                            ball.settled = true;
+                        }
+                    }
+
+                    if (ball.x < 0) { ball.x = 0; ball.vx *= -1; }
+                    if (ball.x + ball.size > window.innerWidth) {
+                        ball.x = window.innerWidth - ball.size;
+                        ball.vx *= -1;
+                    }
+
+                    ball.el.style.transform = `translate(${ball.x}px, ${ball.y}px)`;
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+
+</body>
+
+</html>
