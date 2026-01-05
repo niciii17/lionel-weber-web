@@ -35,7 +35,6 @@
         </script>
     <script>
         $(function () {
-            $("#header").load("/header.html");
             $("#footer").load("/footer.html");
         });
     </script>
@@ -43,7 +42,19 @@
 
 <body>
 
-    <div id="header"></div>
+    <header>
+        <div class="container-menu">
+            <nav>
+                <strong class="header-title">Lionel Weber Tischtennis</strong>
+                <div></div>
+                <ul>
+                    <li><a href="/#about">Über mich</a></li>
+                    <li><a href="/#training">Angebot</a></li>
+                    <li><a href="/#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
 
