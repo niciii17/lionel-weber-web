@@ -25,38 +25,40 @@
 
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-
-
     <link rel="icon" href="imgages/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
         </script>
-    <script>
-        $(function () {
-            $("#footer").load("/footer.html");
-        });
-    </script>
 </head>
 
 <body>
-
     <header>
         <div class="container-menu">
             <nav>
-                <strong class="header-title">Lionel Weber Tischtennis</strong>
+                <a href="/"><strong class="header-title">Lionel Weber Tischtennis</strong></a>
                 <ul>
                     <li><a href="/#about">Über mich</a></li>
                     <li><a href="/#training">Angebot</a></li>
                     <li><a href="/#contact">Kontakt</a></li>
                 </ul>
+                <div class="header-socials">
+                    <a href="https://www.instagram.com/weber_lionel" target="_blank">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lionel-weber-tt" target="_blank">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://wa.me/41786353018" target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                </div>
             </nav>
         </div>
     </header>
 
     <main>
-
         <section class="hero">
             <div class="hero-bg"></div>
             <div class="hero-content">
@@ -72,7 +74,6 @@
                 </a>
             </div>
         </section>
-
         <section id="about">
             <div class="container grid grid-2">
                 <div>
@@ -103,14 +104,13 @@
                     Angebot
                     <span class="title-bar"></span>
                 </h2>
-                <div class="grid grid-3">
+                <div class="cards">
                     <div class="card">
                         <h3 class="card__title">Privattraining</h3>
                         <p>Du möchtest neue technische und taktische Impulse erhalten oder ein Probetraining
                             absolvieren? Dann ist die Einzellektion die optimale Wahl. </p>
                         <p class="card__footer"><strong>60 min</strong></p>
                     </div>
-
                     <div class="card">
                         <h3 class="card__title">Privattraining Trainingsserie</h3>
                         <p>Die Trainingsserie ermöglicht eine längere Zusammenarbeit, bei der an technischen,
@@ -128,7 +128,6 @@
                 </div>
             </div>
         </section>
-
         <section id="philosophie">
             <div class="container grid grid-2">
                 <div>
@@ -145,13 +144,11 @@
                         europäischen Trainern erhalten und in meiner Trainerausbildung das Schweizer Trainingsmodell
                         kennengelernt.
                     <p class="highlight">Als Trainer kombiniere ich die Stärken der beiden
-                        Tischtennisphilosophien.</p> Ich
-                    gebe die technische Präzision der chinesischen Lehre weiter und
-                    verwende dabei
-                    möglichst viele
-                    kreative Elemente aus der europäischen Trainingslehre, insbesondere bei Trainings mit Kindern
-                    und Jugendlichen. <p class="highlight">Das Training soll Spass machen und gleichzeitig fordernd
-                        und lehrreich sein.</p>
+                        Tischtennisphilosophien.</p>
+                    Ich gebe die technische Präzision der chinesischen Lehre weiter und verwende dabei möglichst viele
+                    kreative Elemente aus der europäischen Trainingslehre, insbesondere bei Trainings mit Kindern und
+                    Jugendlichen. <p class="highlight">Das Training soll Spass machen und gleichzeitig fordernd und
+                        lehrreich sein.</p>
                     </p>
                 </div>
             </div>
@@ -195,7 +192,7 @@
                         Interessiert an einem Training? Kontaktiere mich, um einen Termin abzumachen.
                     </p>
                 </div>
-                <div class="contact_facts">
+                <div class="contact__facts">
                     <p>
                         📧 <a href="mailto:lionelwebertt@yahoo.de">lionelwebertt@yahoo.de</a><br />
                     </p>
@@ -217,23 +214,30 @@
             <div class="social-icons">
                 <a href="https://www.instagram.com/weber_lionel" target="_blank"
                     class="d-inline-block text-center ml-2">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/lionel-weber-tt" target="_blank"
                     class="d-inline-block text-center ml-2">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
                 </a>
                 <a class="d-inline-block text-center ml-2" href="https://wa.me/41786353018" target="_blank"
                     rel="noopener noreferrer">
-                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                    <i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
+        <div class="footer__credits">
+            💻 Built by
+            <a href="mailto:nicola.eschbach@hotmail.com">
+                Nicola Eschbach 🚀
+            </a>
+        </div>
     </footer>
+
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-    <script src="ball.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
